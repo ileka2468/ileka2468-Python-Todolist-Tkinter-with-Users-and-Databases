@@ -4,10 +4,10 @@ import bcrypt
 
 def retrieve_content(userID):
     db = sqlc.connect(
-        host="localhost",
-        user="root",
-        passwd="root",
-        database="ToDoShitDB"
+        host="localhost", # your server ip or localhost if in development enviro
+        user="YourUserNameHere", # database username
+        passwd="YourPasswordHere", # database password
+        database="YourDataBaseNameHere"
     )
     cursor = db.cursor()
 
@@ -17,10 +17,10 @@ def retrieve_content(userID):
 
 def insertPost(uid, post, date, time):
     db = sqlc.connect(
-        host="localhost",
-        user="root",
-        passwd="root",
-        database="ToDoShitDB"
+        host="localhost", # your server ip or localhost if in development enviro
+        user="YourUserNameHere", # database username
+        passwd="YourPasswordHere", # database password
+        database="YourDataBaseNameHere"
     )
     cursor = db.cursor()
     cursor.execute("INSERT INTO content (uid, content, date_posted, time_posted) VALUES (%s, %s, %s, %s)", (uid, post, date, time))
@@ -67,10 +67,10 @@ def login(query, userEntry, passEntry):
 
 def preRegister(username, password):
     db = sqlc.connect(
-        host="localhost",
-        user="root",
-        passwd="root",
-        database="ToDoShitDB"
+        host="localhost", # your server ip or localhost if in development enviro
+        user="YourUserNameHere", # database username
+        passwd="YourPasswordHere", # database password
+        database="YourDataBaseNameHere"
     )
 
     cursor = db.cursor()
@@ -94,10 +94,10 @@ def preRegister(username, password):
 
 def preLogin(username, password):
     db = sqlc.connect(
-        host="localhost",
-        user="root",
-        passwd="root",
-        database="ToDoShitDB"
+        host="localhost", # your server ip or localhost if in development enviro
+        user="YourUserNameHere", # database username
+        passwd="YourPasswordHere", # database password
+        database="YourDataBaseNameHere"
     )
 
     cursor = db.cursor()
